@@ -10,52 +10,20 @@ class Day01Tests {
     @Test
     fun example() {
 
-        val payload = """
-            1000
-            2000
-            3000
-
-            4000
-
-            5000
-            6000
-
-            7000
-            8000
-            9000
-
-            10000
-        """.trimIndent()
-
-        val elf = findElfWIthMostCalories(payload)
+        val elf = findElfWIthMostCalories(samplePayload)
 
         assertThat(elf.number).isEqualTo(4)
+        assertThat(elf.calories).isEqualTo(24000)
 
     }
 
     @Test
     fun lastElf() {
 
-        val payload = """
-            1000
-            2000
-            3000
-
-            4000
-
-            5000
-            6000
-
-            10000
-            
-            7000
-            8000
-            9000
-        """.trimIndent()
-
-        val elf = findElfWIthMostCalories(payload)
+        val elf = findElfWIthMostCalories(lastElfPayload)
 
         assertThat(elf.number).isEqualTo(5)
+        assertThat(elf.calories).isEqualTo(24000)
 
     }
 
@@ -74,6 +42,42 @@ class Day01Tests {
     }
 
 }
+
+
+val samplePayload = """
+            1000
+            2000
+            3000
+
+            4000
+
+            5000
+            6000
+
+            7000
+            8000
+            9000
+
+            10000
+        """.trimIndent()
+
+val lastElfPayload = """
+            1000
+            2000
+            3000
+
+            4000
+
+            5000
+            6000
+
+            10000
+            
+            7000
+            8000
+            9000
+        """.trimIndent()
+
 
 val testPayload = """8462
 6981
